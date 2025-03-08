@@ -3,7 +3,7 @@ namespace Singleton
     public class LastTitleMenuSingleton
     {
         private static LastTitleMenuSingleton _instance;
-        public int Index { get; set; } = 0;
+        public int Index { get; set; }
 
         public static LastTitleMenuSingleton GetInstance()
         {

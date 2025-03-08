@@ -2,6 +2,7 @@ using System;
 using Singleton;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Scenes.TitleMenu
 {
@@ -80,13 +81,16 @@ namespace Scenes.TitleMenu
                 FocusMenu(Array.IndexOf(_menuTexts, quitMenuText));
                 return;
             }
-
             SelectMenu();
         }
 
         private void SelectMenu()
         {
             var focusedMenuText = _menuTexts[_lastMenu.Index];
+            if (focusedMenuText == startMenuText)
+            {
+                SceneManager.LoadScene("GameScene");
+            }
             if (focusedMenuText == quitMenuText)
             {
                 Quit();
